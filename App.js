@@ -5,6 +5,9 @@ import { createStore } from 'redux';
 import firebase from 'firebase';
 import reducers from './src/reducers';
 
+import LoginForm from './src/components/LoginForm';
+
+
 class App extends Component {
   componentWillMount() {
     // Initialize Firebase
@@ -23,9 +26,7 @@ class App extends Component {
     return (
       <Provider store={createStore(reducers)}>
         <View>
-          <Text>
-            Hello!
-          </Text>
+          <LoginForm />
         </View>
       </Provider>
     );
