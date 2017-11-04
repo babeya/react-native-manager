@@ -30,9 +30,9 @@ const Input = ({
 Input.propTypes = {
   label: PropType.string,
   value: PropType.string,
-  onChangeText: PropType.function,
+  onChangeText: PropType.func,
   placeholder: PropType.string,
-  secureTextEntry: PropType.boolean,
+  secureTextEntry: PropType.bool,
 };
 
 Input.defaultProps = {

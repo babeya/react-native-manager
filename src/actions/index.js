@@ -1,9 +1,9 @@
 import { EMAIL_CHANGED, PASSWORD_CHANGED } from './types';
 
-export const emailChanged = text => (
-  { type: EMAIL_CHANGED, payload: text }
+export const emailChanged = email => (
+  { type: EMAIL_CHANGED, payload: email }
 );
 
-export const passwordChanged = text => (
-  { type: PASSWORD_CHANGED, payload: text }
+export const passwordChanged = password => (
+  { type: PASSWORD_CHANGED, payload: password }
 );

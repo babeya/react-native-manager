@@ -16,7 +16,7 @@ const Button = ({ onPress, children }) => {
 };
 
 Button.propTypes = {
-  onPress: PropTypes.function,
+  onPress: PropTypes.func,
   children: PropTypes.node,
 };
 
