@@ -1,22 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { View } from 'react-native';
-
-const styles = {
-  containerStyle: {
-    borderBottomWidth: 1,
-    padding: 5,
-    backgroundColor: '#fff',
-    justifyContent: 'flex-start',
-    flexDirection: 'row',
-    borderColor: '#ddd',
-    position: 'relative',
-  },
-};
+import { CardSectionStyles } from './styles';
 
 const CardSection = props => (
-  <View style={styles.containerStyle}>
+  <View style={CardSectionStyles.containerStyle}>
     { props.children }
   </View>
 );
+
+CardSection.propTypes = {
+  children: PropTypes.node,
+};
+
+CardSection.defaultProps = {
+  children: null,
+};
 
 export { CardSection };
