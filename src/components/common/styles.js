@@ -1,12 +1,16 @@
 const InputStyles = {
-  inputStyle: {
-
+  containerStyle: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   labelStyle: {
-
+    fontSize: 16,
+    margin: 5,
   },
-  containerStyle: {
-
+  inputStyle: {
+    fontSize: 16,
+    margin: 5,
   },
 };
 
