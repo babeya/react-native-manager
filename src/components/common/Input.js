@@ -8,6 +8,7 @@ const Input = ({
   value,
   onChangeText,
   placeholder,
+  secureTextEntry,
 }) => {
   const { inputStyle, labelStyle, containerStyle } = InputStyles;
 
@@ -15,6 +16,7 @@ const Input = ({
     <View style={containerStyle}>
       <Text style={labelStyle}> { label } </Text>
       <TextInput
+        secureTextEntry={secureTextEntry}
         placeholder={placeholder}
         autoCorrect={false}
         style={inputStyle}
@@ -30,6 +32,7 @@ Input.propTypes = {
   value: PropType.string,
   onChangeText: PropType.function,
   placeholder: PropType.string,
+  secureTextEntry: PropType.boolean,
 };
 
 Input.defaultProps = {
@@ -37,6 +40,7 @@ Input.defaultProps = {
   value: '',
   onChangeText: () => {},
   placeholder: '',
+  secureTextEntry: false,
 };
 
 // eslint-disable-next-line import/prefer-default-export
