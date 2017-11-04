@@ -17,4 +17,5 @@ CardSection.defaultProps = {
   children: null,
 };
 
+// eslint-disable-next-line import/prefer-default-export
 export { CardSection };
