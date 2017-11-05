@@ -25,9 +25,8 @@ export default (state = INITIAL_STATE, { type, payload }) => {
     case LOGIN_USER_SUCCESS:
       return {
         ...state,
+        ...INITIAL_STATE,
         user: payload,
-        loading: false,
-        error: '',
       };
     case LOGIN_USER_FAIL:
       return {

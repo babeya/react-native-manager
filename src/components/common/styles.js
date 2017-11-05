@@ -1,40 +1,43 @@
 const InputStyles = {
   containerStyle: {
     display: 'flex',
+    flex: 1,
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    height: 40,
   },
   labelStyle: {
-    fontSize: 16,
-    margin: 5,
+    fontSize: 18,
+    paddingLeft: 20,
+    flex: 1,
   },
   inputStyle: {
-    fontSize: 16,
-    margin: 5,
+    flex: 2,
+    fontSize: 18,
+    paddingHorizontal: 5,
+    lineHeight: 23,
+    color: '#000',
   },
 };
 
 const ButtonStyles = {
   buttonStyle: {
     flex: 1,
+    alignSelf: 'stretch',
     backgroundColor: '#fff',
     borderRadius: 5,
     borderWidth: 1,
     borderColor: '#007aff',
     marginLeft: 5,
     marginRight: 5,
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   textStyle: {
+    alignSelf: 'center',
     color: '#007aff',
     fontSize: 16,
     fontWeight: '600',
     paddingTop: 10,
     paddingBottom: 10,
-    flex: 1,
   },
 };
 

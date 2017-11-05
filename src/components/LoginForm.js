@@ -25,14 +25,9 @@ class LoginForm extends Component {
       return (<Spinner />);
     }
     return (
-      <View style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-        <Text style={{ color: '#ff0000' }}>
-          {this.props.error}
-        </Text>
-        <Button onPress={this.onButtonPress.bind(this)} style={{ flex: 1 }}>
-          Login
-        </Button>
-      </View>
+      <Button onPress={this.onButtonPress.bind(this)}>
+        Login
+      </Button>
     );
   }
 
@@ -56,6 +51,9 @@ class LoginForm extends Component {
             secureTextEntry
           />
         </CardSection>
+        <Text style={{ color: '#ff0000' }}>
+          {this.props.error}
+        </Text>
         <CardSection>
           { this.renderButton() }
         </CardSection>
