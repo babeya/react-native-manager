@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import { View, Picker } from 'react-native';
 import { connect } from 'react-redux';
 import { employeeUpdate } from '../actions';
 import { CardSection, Card, Button, Input } from './common';
@@ -31,6 +31,17 @@ class EmployeeCreate extends Component {
             />
           </CardSection>
           <CardSection>
+            <Picker
+              style={{ flex: 1 }}
+              selectedValue={this.props.shift}
+              onValueChange={this.propChanged.bind(this, 'shift')}
+            >
+              <Picker.Item label="Monday" value="monday" />
+              <Picker.Item label="Tuesday" value="tuesday" />
+              <Picker.Item label="Wednesday" value="wednesday" />
+              <Picker.Item label="Thursday" value="thursday" />
+              <Picker.Item label="Friday" value="friday" />
+            </Picker>
           </CardSection>
         </Card>
         <Button>
