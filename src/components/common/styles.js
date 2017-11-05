@@ -1,3 +1,5 @@
+import {TEXT, CARD_BACKGROUND, INFO, ERROR, APP_BACKGROUND} from '../define';
+
 const InputStyles = {
   containerStyle: {
     display: 'flex',
@@ -22,18 +24,16 @@ const InputStyles = {
 
 const ButtonStyles = {
   buttonStyle: {
-    flex: 1,
     alignSelf: 'stretch',
-    backgroundColor: '#fff',
+    backgroundColor: INFO,
     borderRadius: 5,
-    borderWidth: 1,
-    borderColor: '#007aff',
     marginLeft: 5,
     marginRight: 5,
+    elevation: 3,
   },
   textStyle: {
     alignSelf: 'center',
-    color: '#007aff',
+    color: CARD_BACKGROUND,
     fontSize: 16,
     fontWeight: '600',
     paddingTop: 10,
@@ -43,20 +43,16 @@ const ButtonStyles = {
 
 const CardStyles = {
   containerStyle: {
-    // Border
-    borderWidth: 1,
-    borderRadius: 2,
-    borderColor: '#ddd',
-    borderBottomWidth: 0,
     // Shadow
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2, // Map with border-radius
+    shadowOffset: { width: -1, height: 1 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3, // Map with border-radius
     elevation: 1,
     marginLeft: 5,
     marginRight: 5,
     marginTop: 10,
+    backgroundColor: CARD_BACKGROUND,
   },
 };
 
@@ -64,10 +60,9 @@ const CardSectionStyles = {
   containerStyle: {
     borderBottomWidth: 1,
     padding: 5,
-    backgroundColor: '#fff',
     justifyContent: 'flex-start',
     flexDirection: 'row',
-    borderColor: '#ddd',
+    borderColor: APP_BACKGROUND,
     position: 'relative',
   },
 };

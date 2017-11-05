@@ -1,13 +1,36 @@
 import React from 'react';
-import { Scene, Router } from 'react-native-router-flux';
+import { Scene, Router, Actions } from 'react-native-router-flux';
 import LoginForm from './components/LoginForm';
 import EmployeeList from './components/EmployeeList';
+import EmployeeCreate from './components/EmployeeCreate';
+
+import { APP_BACKGROUND } from './components/define';
+
+const sceneStyle = {
+  backgroundColor: APP_BACKGROUND,
+};
 
 const RouterComponent = () => (
-  <Router>
-    <Scene key="root">
-      <Scene key="login" component={LoginForm} title="Please Login" initial />
-      <Scene key="employeeList" component={EmployeeList} title="Employees" />
+  <Router sceneStyle={sceneStyle}>
+    <Scene key="root" hideNavBar>
+      <Scene key="auth" >
+        <Scene key="login" component={LoginForm} title="Please Login" />
+      </Scene>
+      <Scene key="main" initial>
+        <Scene
+          key="employeeList"
+          initial
+          component={EmployeeList}
+          title="Employees"
+          rightTitle="Add"
+          onRight={() => Actions.employeeCreate()}
+        />
+        <Scene
+          key="employeeCreate"
+          component={EmployeeCreate}
+          title="New Employee"
+        />
+      </Scene>
     </Scene>
   </Router>
 );

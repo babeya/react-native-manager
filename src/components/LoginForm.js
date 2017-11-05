@@ -33,31 +33,31 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <Card>
-        <CardSection>
-          <Input
-            label="Email"
-            placeholder="email@email.com"
-            value={this.props.email}
-            onChangeText={this.onEmailChange.bind(this)}
-          />
-        </CardSection>
-        <CardSection>
-          <Input
-            label="Password"
-            placeholder="password"
-            value={this.props.password}
-            onChangeText={this.onPasswordChange.bind(this)}
-            secureTextEntry
-          />
-        </CardSection>
+      <View style={{ flex: 1, flexDirection: 'column', justifyContent:'center' }}>
+        <Card>
+          <CardSection>
+            <Input
+              label="Email"
+              placeholder="email@email.com"
+              value={this.props.email}
+              onChangeText={this.onEmailChange.bind(this)}
+            />
+          </CardSection>
+          <CardSection>
+            <Input
+              label="Password"
+              placeholder="password"
+              value={this.props.password}
+              onChangeText={this.onPasswordChange.bind(this)}
+              secureTextEntry
+            />
+          </CardSection>
+        </Card>
         <Text style={{ color: '#ff0000' }}>
           {this.props.error}
         </Text>
-        <CardSection>
-          { this.renderButton() }
-        </CardSection>
-      </Card>
+        { this.renderButton() }
+      </View>
     );
   }
 }
