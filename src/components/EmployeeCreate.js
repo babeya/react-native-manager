@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, Picker, Text } from 'react-native';
 import { connect } from 'react-redux';
-import { employeeUpdate } from '../actions';
+import { employeeUpdate, employeeCreate } from '../actions';
 import { CardSection, Card, Button, Input } from './common';
 
 const styles = { // TODO : externalize
@@ -16,6 +16,18 @@ const styles = { // TODO : externalize
 };
 
 class EmployeeCreate extends Component {
+  constructor(props) {
+    super(props);
+
+    this.onButtonPress = this.onButtonPress.bind(this);
+  }
+
+  onButtonPress() {
+    const { name, phone, shift } = this.props;
+
+    this.props.employeeCreate({ name, phone, shift });
+  }
+
   propChanged(prop, value) {
     this.props.employeeUpdate({ prop, value });
   }
@@ -59,7 +71,7 @@ class EmployeeCreate extends Component {
             </Picker>
           </CardSection>
         </Card>
-        <Button>
+        <Button onPress={this.onButtonPress}>
           Create
         </Button>
       </View>
@@ -70,8 +82,13 @@ class EmployeeCreate extends Component {
 EmployeeCreate.propTypes = {
   name: PropTypes.string.isRequired,
   phone: PropTypes.string.isRequired,
-  shift: PropTypes.string.isRequired,
+  shift: PropTypes.oneOf(['monday', 'tuesday', 'wednesday', 'thursday', 'friday']),
   employeeUpdate: PropTypes.func.isRequired,
+  employeeCreate: PropTypes.func.isRequired,
+};
+
+EmployeeCreate.defaultProps = {
+  shift: 'monday',
 };
 
 const mapStateToProps = (state) => {
@@ -80,4 +97,7 @@ const mapStateToProps = (state) => {
   return { name, phone, shift };
 };
 
-export default connect(mapStateToProps, { employeeUpdate })(EmployeeCreate);
+export default connect(mapStateToProps, {
+  employeeUpdate,
+  employeeCreate,
+})(EmployeeCreate);
