@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, Picker } from 'react-native';
+import { View, Picker, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { employeeUpdate } from '../actions';
 import { CardSection, Card, Button, Input } from './common';
+
+const styles = { // TODO : externalize
+  pickerContainerStyle: {
+    flexDirection: 'row',
+  },
+  pickerLabelStyle: {
+    fontSize: 18,
+    paddingLeft: 20,
+  },
+};
 
 class EmployeeCreate extends Component {
   propChanged(prop, value) {
@@ -11,6 +21,8 @@ class EmployeeCreate extends Component {
   }
 
   render() {
+    const { pickerLabelStyle, pickerContainerStyle } = styles;
+
     return (
       <View>
         <Card>
@@ -30,7 +42,10 @@ class EmployeeCreate extends Component {
               onChangeText={this.propChanged.bind(this, 'phone')}
             />
           </CardSection>
-          <CardSection>
+          <CardSection style={pickerContainerStyle}>
+            <Text style={pickerLabelStyle} >
+              Shift
+            </Text>
             <Picker
               style={{ flex: 1 }}
               selectedValue={this.props.shift}
